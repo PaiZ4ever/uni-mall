@@ -1,10 +1,22 @@
 import { request } from "../../request/index";
 Page({
   data: {
-    swiperList: []
+    //轮播图
+    swiperList: [],
+    //分类导航
+    catesList: [],
+    //楼层
+    floorList: []
   },
   //options(Object)
   onLoad: function (options) {
+    this.getSwiperList();
+    this.getCateList();
+    this.getFloorList();
+  },
+
+  //获取轮播图数据
+  getSwiperList() {
     request({
       url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
     }).then(result => {
@@ -12,6 +24,28 @@ Page({
         swiperList: result.data.message
       })
     })
+  },
+  //获取分类导航数据 
+  getCateList() {
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
+    }).then(result => {
+      this.setData({
+        catesList: result.data.message
+      })
+    })
+  },
+
+  //获取楼层数据 
+  getFloorList() {
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+    }).then(result => {
+      this.setData({
+        floorList: result.data.message
+      })
+    })
   }
+
 });
 
