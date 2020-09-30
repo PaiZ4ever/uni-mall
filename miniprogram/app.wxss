@@ -1,7 +1,13 @@
 @import "./styles/iconfont.wxss";
 /* 不支持通配符* */
 
-page, view, text, swiper, swiper-item, image, navigator {
+page,
+view,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -11,4 +17,8 @@ page {
     --themeColor: #eb4450;
     /* 设计稿大小375px,则对应1px=2rpx */
     font-size: 28rpx;
+}
+
+image {
+    width: 100%;
 }

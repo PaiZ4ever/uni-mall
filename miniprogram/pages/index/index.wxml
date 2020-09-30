@@ -22,4 +22,21 @@
     </navigator>
   </view>
   <!-- 导航e -->
+  <!-- 楼层s -->
+  <view class="index_floor" wx:for="{{floorList}}" wx:for-item="content" wx:key="floor_title">
+    <!-- 标题 -->
+    <view class="floor_title">
+      <image class="" src="{{content.floor_title.image_src}}" mode="widthFix">
+      </image>
+    </view>
+    <!-- 内容 -->
+    <view class="floor_product">
+      <navigator wx:for="{{content.product_list}}" wx:key="name">
+        <!-- index===0?'widthFix':'scaleToFill' 只让第一张大图生效widthFix属性 -->
+        <image class="" src="{{item.image_src}}" mode="{{index===0?'widthFix':'scaleToFill'}}">
+        </image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 楼层e -->
 </view>

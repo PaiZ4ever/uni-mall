@@ -1,2 +1,35 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="mall_category">
+    <!-- 搜索框s -->
+    <SearchInput></SearchInput>
+    <!-- 搜索框e -->
+    <view class="cates_container">
+        <!-- 左侧菜单s -->
+        <scroll-view class="left_menu" scroll-y>
+            <view class="menu_item {{index===currentIndex?'active':''}}" wx:for="{{leftMenuList}}" wx:key="*this">
+                {{item}}
+            </view>
+        </scroll-view>
+        <!-- 左侧菜单e -->
+        <!-- 右侧商品s -->
+        <scroll-view class="right_product" scroll-y>
+            <view class="product_box" wx:for="{{rightProduct}}" wx:for-item="goods" wx:key="cat_id">
+                <view class="product_title">
+                    <text class="line">/</text>
+                    <text class="title">{{goods.cat_name}}</text>
+                    <text class="line">/</text>
+                </view>
+                <view class="product_list">
+                    <navigator wx:for="{{goods.children}}" wx:key="cat_id">
+                        <image src="{{item.cat_icon}}" mode="widthFix">
+                        </image>
+                        <view class="product_name">
+                            {{item.cat_name}}
+                        </view>
+                    </navigator>
+
+                </view>
+            </view>
+        </scroll-view>
+        <!-- 右侧商品e -->
+    </view>
+</view>
