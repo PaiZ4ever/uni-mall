@@ -1,2 +1,31 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view class="goods_list">
+    <!-- 搜索框s -->
+    <SearchInput></SearchInput>
+    <!-- 搜索框e -->
+    <Tabs tabs="{{tabs}}" bind:itemChange="Change">
+        <block wx:if="{{tabs[0].isActive}}">
+            <view class="first_tab">
+                <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id">
+                    <!-- 图片容器 -->
+                    <view class="goods_pic">
+                        <image
+                            src="{{item.goods_small_logo?item.goods_small_logo:'http://image2.suning.cn/uimg/b2c/newcatentries/0070161385-000000000621507039_2_400x400.jpg'}}"
+                            mode="widthFix">
+                        </image>
+                    </view>
+                    <!-- 商品容器 -->
+                    <view class="goods_content">
+                        <view class="goods_name">{{item.goods_name}}</view>
+                        <view class="good_price">￥{{item.goods_price}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+        <block wx:elif="{{tabs[1].isActive}}">
+            1
+        </block>
+        <block wx:else="{{tabs[2].isActive}}">
+            2
+        </block>
+    </Tabs>
+</view>

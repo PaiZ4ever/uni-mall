@@ -20,7 +20,8 @@
                     <text class="line">/</text>
                 </view>
                 <view class="product_list">
-                    <navigator wx:for="{{goods.children}}" wx:key="cat_id">
+                    <navigator wx:for="{{goods.children}}" wx:key="cat_id"
+                        url="/pages/goods_list/index?cid={{item.cat_id}}">
                         <image src="{{item.cat_icon}}" mode="widthFix">
                         </image>
                         <view class="product_name">
