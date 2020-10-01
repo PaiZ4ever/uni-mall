@@ -1,2 +1,16 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="goods_item" wx:for="{{cartGoods}}" wx:key="goods_id">
+    <view class="item_pic">
+        <image src="{{item.pics[0].pics_mid}}" mode="widthFix">
+        </image>
+    </view>
+    <view class="item_text">
+        <view class="name">{{item.goods_name}}</view>
+
+
+        <view class="count">
+            <text class="number">
+                {{item.num}}
+            </text>
+        </view>
+    </view>
+</view>

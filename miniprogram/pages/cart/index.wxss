@@ -1,1 +1,22 @@
-/* pages/cart/index.wxss */
+.goods_item {
+  display: flex;
+}
+.goods_item .item_pic {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goods_item .item_text {
+  flex: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.goods_item .count {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
