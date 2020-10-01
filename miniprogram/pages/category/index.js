@@ -25,7 +25,7 @@ Page({
     if (!Cates) {
       this.getCates();
     } else {
-      if (Date.now() - Cates.time > 1000 * 100) {
+      if (Date.now() - Cates.time > 1000 * 50) {
         this.getCates();
 
       } else {
