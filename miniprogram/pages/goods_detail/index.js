@@ -17,6 +17,7 @@ Page({
     const goodsObj = res.data.message;
     this.setData({
       goodsDetail: {
+        goods_small_logo: goodsObj.goods_small_logo,
         goods_id: goodsObj.goods_id,
         goods_name: goodsObj.goods_name,
         goods_price: goodsObj.goods_price,

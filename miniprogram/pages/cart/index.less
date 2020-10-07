@@ -1,27 +1,158 @@
-.goods_item {
-    display: flex;
+page {
+    padding-bottom: 90rpx;
+}
 
-    .item_pic {
+.address {
+    .add_btn {
+        padding: 20rpx;
+    }
+
+    .user {
+        display: flex;
+        padding: 20rpx;
+
+        .user_message {
+            flex: 5;
+        }
+
+        .user_phone {
+            flex      : 3;
+            text-align: right;
+        }
+    }
+}
+
+.cart_content {
+    .cart_title {
+        padding      : 20rpx;
+        font-size    : 36rpx;
+        color        : var(--themeColor);
+        border-top   : 1rpx solid currentColor;
+        border-bottom: 1rpx solid currentColor;
+
+    }
+
+    .cart_main {
+        display      : flex;
+        padding      : 10rpx;
+        border-bottom: 1rpx solid #ccc;
+
+
+        .cart_checkbox {
+            flex           : 1;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+
+            checkbox-group {
+                checkbox {}
+            }
+        }
+
+        .cart_img {
+            flex           : 2;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+
+            image {
+                width: 80%;
+            }
+        }
+
+        .cart_info {
+            flex           : 4;
+            display        : flex;
+            flex-direction : column;
+            justify-content: space-around;
+
+            .goods_name {
+                display           : -webkit-box;
+                overflow          : hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                color             : #666;
+            }
+
+            .num {
+                display        : flex;
+                justify-content: space-between;
+
+                .goods_price {
+                    color    : var(--themeColor);
+                    font-size: 34rpx;
+                }
+
+                .num_tool {
+                    display: flex;
+
+                    .num_edit {
+                        width          : 55rpx;
+                        height         : 55rpx;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                        border         : 1rpx solid #ccc;
+                    }
+
+                    .goods_num {
+                        width          : 55rpx;
+                        height         : 55rpx;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+view.footer_tool {
+    position        : fixed;
+    bottom          : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 90rpx;
+    background-color: #fff;
+    display         : flex;
+    border-top      : 1rpx solid #ccc;
+
+    view.all_check {
         flex           : 2;
         display        : flex;
         justify-content: center;
         align-items    : center;
 
+        checkbox-group {
+            checkbox {}
+        }
     }
 
-    .item_text {
-        flex              : 4;
-        display           : -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        overflow          : hidden;
+    view.total_price_box {
+        flex         : 5;
+        text-align   : right;
+        padding-right: 15rpx;
+
+        view.total_price {
+            text.price_text {
+                color      : var(--themeColor);
+                font-size  : 34rpx;
+                font-weight: 600;
+            }
+        }
+
     }
 
-    .count {
-        flex           : 1;
-        display        : flex;
-        justify-content: center;
-        align-items    : center;
-
+    view.pay {
+        flex            : 3;
+        background-color: var(--themeColor);
+        color           : #fff;
+        font-size       : 32rpx;
+        font-weight     : 600;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
     }
 }

@@ -1,21 +1,118 @@
-.goods_item {
-  display: flex;
+page {
+  padding-bottom: 90rpx;
 }
-.goods_item .item_pic {
+.address .add_btn {
+  padding: 20rpx;
+}
+.address .user {
+  display: flex;
+  padding: 20rpx;
+}
+.address .user .user_message {
+  flex: 5;
+}
+.address .user .user_phone {
+  flex: 3;
+  text-align: right;
+}
+.cart_content .cart_title {
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: var(--themeColor);
+  border-top: 1rpx solid currentColor;
+  border-bottom: 1rpx solid currentColor;
+}
+.cart_content .cart_main {
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.cart_content .cart_main .cart_checkbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_img {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.goods_item .item_text {
-  flex: 4;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
+.cart_content .cart_main .cart_img image {
+  width: 80%;
 }
-.goods_item .count {
-  flex: 1;
+.cart_content .cart_main .cart_info {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart_content .cart_main .cart_info .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+}
+.cart_content .cart_main .cart_info .num {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_content .cart_main .cart_info .num .goods_price {
+  color: var(--themeColor);
+  font-size: 34rpx;
+}
+.cart_content .cart_main .cart_info .num .num_tool {
+  display: flex;
+}
+.cart_content .cart_main .cart_info .num .num_tool .num_edit {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+}
+.cart_content .cart_main .cart_info .num .num_tool .goods_num {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+view.footer_tool {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1rpx solid #ccc;
+}
+view.footer_tool view.all_check {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+view.footer_tool view.total_price_box {
+  flex: 5;
+  text-align: right;
+  padding-right: 15rpx;
+}
+view.footer_tool view.total_price_box view.total_price text.price_text {
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 600;
+}
+view.footer_tool view.pay {
+  flex: 3;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;

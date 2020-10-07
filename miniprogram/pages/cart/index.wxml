@@ -1,16 +1,67 @@
-<view class="goods_item" wx:for="{{cartGoods}}" wx:key="goods_id">
-    <view class="item_pic">
-        <image src="{{item.pics[0].pics_mid}}" mode="widthFix">
-        </image>
+<!-- 收货地址 -->
+<view class="address">
+    <!-- 收货地址不存在时显示 -->
+    <!-- 对象布尔类型也为true，所以用里面的属性来判断 -->
+    <view class="add_btn" wx:if="{{!address.userName}}">
+        <button bindtap="chooseAddress" type="primary" plain>获取收获地址</button>
     </view>
-    <view class="item_text">
-        <view class="name">{{item.goods_name}}</view>
+    <!-- 收货地址存在时显示 -->
+    <view wx:else class="user">
+        <view class="user_message">
+            <view>
+                {{address.userName}}
+            </view>
+            <view>
+                {{address.all}}
+            </view>
+        </view>
+        <view class="user_phone">{{address.telNumber}}</view>
+    </view>
 
-
-        <view class="count">
-            <text class="number">
-                {{item.num}}
-            </text>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    <view class="cart_main" wx:for="{{cartGoods}}" wx:key="goods_id">
+        <view class="cart_checkbox">
+            <checkbox-group bindchange="">
+                <checkbox checked="false">
+                </checkbox>
+            </checkbox-group>
+        </view>
+        <view class="cart_img">
+            <image src="{{item.goods_small_logo}}" mode="widthFix">
+            </image>
+        </view>
+        <view class="cart_info">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="num">
+                <view class="goods_price">￥{{item.goods_price}}</view>
+                <view class="num_tool">
+                    <view class="num_edit">+</view>
+                    <view class="goods_num">{{item.num}}</view>
+                    <view class="num_edit">-</view>
+                </view>
+            </view>
         </view>
     </view>
+
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+    <view class="all_check">
+        <checkbox-group bindchange="">
+            <checkbox checked="">全选</checkbox>
+        </checkbox-group>
+    </view>
+    <view class="total_price_box">
+        <view class="total_price">
+            合计：<text class="price_text">￥999</text>
+        </view>
+        <view>
+            包含运费
+        </view>
+    </view>
+    <view class="pay">结算(3)</view>
 </view>
