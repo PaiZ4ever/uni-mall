@@ -22,46 +22,53 @@
 <!-- 购物车内容 -->
 <view class="cart_content">
     <view class="cart_title">购物车</view>
-    <view class="cart_main" wx:for="{{cartGoods}}" wx:key="goods_id">
-        <view class="cart_checkbox">
-            <checkbox-group bindchange="">
-                <checkbox checked="false">
-                </checkbox>
-            </checkbox-group>
-        </view>
-        <view class="cart_img">
-            <image src="{{item.goods_small_logo}}" mode="widthFix">
-            </image>
-        </view>
-        <view class="cart_info">
-            <view class="goods_name">{{item.goods_name}}</view>
-            <view class="num">
-                <view class="goods_price">￥{{item.goods_price}}</view>
-                <view class="num_tool">
-                    <view class="num_edit">+</view>
-                    <view class="goods_num">{{item.num}}</view>
-                    <view class="num_edit">-</view>
+    <block wx:if="{{cartGoods.length!==0}}">
+        <view class="cart_main" wx:for="{{cartGoods}}" wx:key="goods_id">
+            <view class="cart_checkbox">
+                <checkbox-group bindchange="checkChange" data-id="{{item.goods_id}}">
+                    <checkbox checked="{{item.checked}}">
+                    </checkbox>
+                </checkbox-group>
+            </view>
+            <view class="cart_img">
+                <image src="{{item.goods_small_logo}}" mode="widthFix">
+                </image>
+            </view>
+            <view class="cart_info">
+                <view class="goods_name">{{item.goods_name}}</view>
+                <view class="num">
+                    <view class="goods_price">￥{{item.goods_price}}</view>
+                    <view class="num_tool">
+                        <view class="num_edit" bindtap="numChange" data-id="{{item.goods_id}}" data-way="{{-1}}">-
+                        </view>
+                        <view class="goods_num">{{item.num}}</view>
+                        <view class="num_edit" bindtap="numChange" data-id="{{item.goods_id}}" data-way="{{1}}">+</view>
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
+    </block>
+    <block wx:else>
+        <image src="/icons/cart-0.jpg" mode="widthFix">
+        </image>
+    </block>
 
 </view>
 
 <!-- 底部工具栏 -->
 <view class="footer_tool">
     <view class="all_check">
-        <checkbox-group bindchange="">
-            <checkbox checked="">全选</checkbox>
+        <checkbox-group bindchange="allCheckChange">
+            <checkbox checked="{{allChecked}}">全选</checkbox>
         </checkbox-group>
     </view>
     <view class="total_price_box">
         <view class="total_price">
-            合计：<text class="price_text">￥999</text>
+            合计：<text class="price_text">￥{{totalPrice}}</text>
         </view>
         <view>
             包含运费
         </view>
     </view>
-    <view class="pay">结算(3)</view>
+    <view class="pay" bindtap="cartPay">结算({{totalNum}})</view>
 </view>

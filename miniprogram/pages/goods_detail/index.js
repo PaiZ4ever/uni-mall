@@ -49,6 +49,7 @@ Page({
     })
     if (!decide) {
       this.data.goodsDetail.num = 1;
+      this.data.goodsDetail.checked = true;
       cartGoods.push(this.data.goodsDetail);
     }
     wx.setStorageSync("cartGoods", cartGoods);
