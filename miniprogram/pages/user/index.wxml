@@ -12,3 +12,65 @@
         </navigator>
     </view>
 </view>
+<view class="user_content">
+    <view class="user_main">
+        <view class="history">
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="mine_num">0</view>
+                <view class="mine_name">收藏的店铺</view>
+            </navigator>
+            <navigator class="" target="" url="/pages/collect/index" hover-class="navigator-hover" open-type="navigate">
+                <view class="mine_num">{{collectNum}}</view>
+                <view class="mine_name">收藏的商品</view>
+            </navigator>
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="mine_num">0</view>
+                <view class="mine_name">关注的商品</view>
+            </navigator>
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="mine_num">0</view>
+                <view class="mine_name">我的足迹</view>
+            </navigator>
+        </view>
+        <view class="order">
+            <view class="order_title">我的订单</view>
+            <view class="order_content">
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-icon-"></view>
+                    <view class="order_name">全部订单</view>
+                </navigator>
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-fukuantongzhi"></view>
+                    <view class="order_name">待付款</view>
+                </navigator>
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="order_name">待收货</view>
+                </navigator>
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-zhifu"></view>
+                    <view class="order_name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="address">
+            收货地址管理
+        </view>
+        <view class="about">
+            <view class="about_item item1">
+                <text>联系客服</text>
+                <text>123-456-789</text>
+            </view>
+            <navigator url="/pages/feedback/index" class="about_item">
+                意见反馈
+            </navigator>
+            <view class="about_item">
+                关于我们
+            </view>
+        </view>
+        <view class="recommend">
+            把应用推荐给他人
+        </view>
+
+    </view>
+</view>

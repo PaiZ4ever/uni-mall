@@ -6,7 +6,7 @@
   <view class="index_swiper">
     <swiper autoplay="true" indicator-dots="true" circular="true">
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <navigator>
+        <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
           <image src="{{item.image_src}}" mode="widthFix">
           </image>
         </navigator>
@@ -16,7 +16,7 @@
   <!-- 轮播图e -->
   <!-- 导航s -->
   <view class="index_cate">
-    <navigator wx:for="{{catesList}}" wx:key="name">
+    <navigator wx:for="{{catesList}}" wx:key="name" url="/pages/category/index" open-type="switchTab">
       <image src="{{item.image_src}}" mode="widthFix">
       </image>
     </navigator>
@@ -31,7 +31,7 @@
     </view>
     <!-- 内容 -->
     <view class="floor_product">
-      <navigator wx:for="{{content.product_list}}" wx:key="name">
+      <navigator wx:for="{{content.product_list}}" wx:key="name" url="{{item.navigator_url}}">
         <!-- index===0?'widthFix':'scaleToFill' 只让第一张大图生效widthFix属性 -->
         <image class="" src="{{item.image_src}}" mode="{{index===0?'widthFix':'scaleToFill'}}">
         </image>

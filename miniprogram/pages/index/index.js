@@ -43,6 +43,11 @@ Page({
     request({
       url: '/home/floordata'
     }).then(result => {
+      for (let k = 0; k < result.data.message.length; k++) {
+        result.data.message[k].product_list.forEach(v => {
+          v.navigator_url = v.navigator_url.slice(0, 17) + "/index" + v.navigator_url.slice(17)
+        })
+      }
       this.setData({
         floorList: result.data.message
       })

@@ -38,6 +38,9 @@ page {
   align-items: center;
   border-left: 2rpx solid #000000;
 }
+.goods_head .goods_star .icon-shoucang1 {
+  color: orangered;
+}
 .goods_introduce .title {
   font-size: 32rpx;
   color: var(--themeColor);

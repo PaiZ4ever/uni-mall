@@ -11,8 +11,8 @@
     <view class="goods_price">￥{{goodsDetail.goods_price}}</view>
     <view class="goods_head">
         <view class="goods_name">{{goodsDetail.goods_name}}</view>
-        <view class="goods_star">
-            <text class="iconfont icon-shoucang"></text>
+        <view class="goods_star" bindtap="star">
+            <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></text>
             <view class="star_text">种草</view>
         </view>
 

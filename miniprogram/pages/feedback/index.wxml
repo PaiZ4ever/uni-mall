@@ -1,2 +1,26 @@
-<!--pages/feedback/index.wxml-->
-<text>pages/feedback/index.wxml</text>
+<Tabs tabs="{{tabs}}" bind:itemChange="Change">
+    <view class="fback_main">
+        <view class="fback_title">问题的种类</view>
+        <view class="fback_tips">
+            <text>功能建议</text>
+            <text>购买遇到问题</text>
+            <text>性能问题</text>
+            <text>其他</text>
+        </view>
+        <view class="fback_content">
+            <textarea placeholder="请说明问题" value="{{textVal}}" bindinput="handleTextInp"></textarea>
+            <view class="fback_tool">
+                <button bindtap="chooseImage">+</button>
+                <view class="img_item" wx:for="{{chooseImages}}" wx:key="*this" bindtap="removeImg"
+                    data-index="{{index}}">
+                    <UpImage src="{{item}}"></UpImage>
+                </view>
+            </view>
+        </view>
+        <view class="form_btn">
+            <button type="warn" bindtap="formSubmit">
+                提交
+            </button>
+        </view>
+    </view>
+</Tabs>

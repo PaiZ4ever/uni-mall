@@ -31,7 +31,8 @@ Page({
   totalPages: 1,
 
   onLoad: function (options) {
-    this.Query.cid = options.cid;
+    this.Query.cid = options.cid || "";
+    this.Query.query = options.query || "";
     this.getGoodsList();
   },
 
